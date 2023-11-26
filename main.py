@@ -7,7 +7,7 @@ import os, sys, inspect
 
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir+"/rpi-rgb-led-matrix/bindings/python")
+sys.path.append("/rpi-rgb-led-matrix/bindings/python")
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 light_pink = (255,219,218)
