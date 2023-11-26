@@ -29,7 +29,7 @@ spotify_color = (0,255,0)
 
 font = ImageFont.truetype("fonts/tiny.otf", 5)
 
-background = Image.open("backgrounds/sakura-bg.png")
+background = Image.open("backgrounds/sakura-bg.png").convert("RGB")
 
 options = RGBMatrixOptions()
 options.rows = 32
