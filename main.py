@@ -29,6 +29,8 @@ spotify_color = (0,255,0)
 
 font = ImageFont.truetype("fonts/tiny.otf", 5)
 
+background = Image.open("backgrounds/sakura-bg.png")
+
 options = RGBMatrixOptions()
 options.rows = 32
 options.cols = 64
@@ -50,7 +52,7 @@ def padToTwoDigit(num):
         return str(num)
 
 def printTime():
-    frame = Image.new("RGB", (64, 32), (0,0,0))
+    frame = background.copy()
     draw = ImageDraw.Draw(frame)
 
     currentTime = datetime.now(tz=tz.tzlocal())
