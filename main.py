@@ -65,11 +65,20 @@ def printTime():
     draw.text((3, 6), padToTwoDigit(hours), light_pink, font=font)
     draw.text((10, 6), ":", light_pink, font=font)
     draw.text((13, 6), padToTwoDigit(minutes), light_pink, font=font)
+    # Put the date here as DD/MM/YYYY
+    draw.text((3, 12), padToTwoDigit(day), dark_pink, font=font)
+    draw.text((6, 12), "/", dark_pink, font=font)
+    draw.text((8, 12), padToTwoDigit(month), dark_pink, font=font)
+    draw.text((11, 12), "/", dark_pink, font=font)
+    draw.text((13, 12), str(currentTime.year), dark_pink, font=font)
+
+
 
     matrix.SetImage(frame)
 
-schedule.every(1).minutes.do(printTime)
+printTime()
 
+schedule.every(10).seconds.do(printTime)
 while True:
     schedule.run_pending()
     time.sleep(1)
